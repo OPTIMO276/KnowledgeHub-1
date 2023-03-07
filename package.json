@@ -1,0 +1,30 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "dopenative": "^0.0.24",
+    "expo": "^47.0.0",
+    "expo-status-bar": "~1.4.2",
+    "google-auth-library": "^5.1.1",
+    "react": "18.1.0",
+    "react-native": "0.70.5",
+    "react-native-button": "^3.0.1",
+    "react-native-gesture-handler": "~2.8.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-navigation": "^4.4.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3"
+  },
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
