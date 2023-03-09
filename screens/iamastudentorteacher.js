@@ -8,7 +8,10 @@ const QuestionExample = () => {
                 <Text style={styles.buttonText}>I am a student</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} >
-                <Text style={styles.buttonText} onPress ={() => navigation.navigate("register")}>I am a teacher</Text>
+                <Text style={styles.buttonText} >I am a teacher</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} >
+                <Text style={styles.buttonText}>Log in</Text>
             </TouchableOpacity>
         </View>
     );
