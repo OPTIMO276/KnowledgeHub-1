@@ -7,7 +7,6 @@ const RegisterPage = () => {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   
-  
   const handleSubmit = () => {
     // validate form fields
     if (username === '' || email === '' || password === '' || passwordConfirm === '') {
@@ -23,42 +22,6 @@ const RegisterPage = () => {
     // send data to server for registration
     // navigate to home screen or display success message
   }
-  const {google} = require('googleapis');
-  
-  const writeDataToSheet = async (Username, Email ,Password, ConfirmPassword) => {
-    const auth = new google.auth.GoogleAuth({
-      keyFile: 'credentials.json',
-      scopes: 'https://www.googleapis.com/auth/spreadsheets',
-    });
-  
-    const sheets = google.sheets({version: 'v4', auth});
-  
-    const spreadsheetId = '11Zmg3appsAVtUdi5JWG29gpExfnafuZHTBPN6WyLMCo';
-    const range = 'register';
-  
-    const values = [[Username, Email ,Password, ConfirmPassword]];
-  
-    const resource = {
-      values,
-    };
-  
-    try {
-      const result = await sheets.spreadsheets.values.append({
-        spreadsheetId,
-        range,
-        valueInputOption: 'USER_ENTERED',
-        resource,
-      });
-  
-      console.log(`${result.data.updates.updatedCells} cells appended.`);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-  
-
-  
-
   
   return (
     <View style={styles.container}>
@@ -87,10 +50,10 @@ const RegisterPage = () => {
         style={styles.input}
         placeholder="Confirm Password"
         secureTextEntry={true}
-        value={confirmPassword}
-        onChangeText={setConfirmPassword}
+        value={passwordConfirm}
+        onChangeText={setPasswordConfirm}
       />
-      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
     </View>
